@@ -25,54 +25,30 @@ class DataSampler():
         Help on built-in function array in module numpy:
 
         DataSampler(...)
-            __init__(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0)
+            __init__(self, T=400,nchan=10,Q=None,spont_options=None,evoked_options=None)
         
             Create init for the class DataSampler.
         
             Parameters
             ----------
-            object : array_like
-                An array, any object exposing the array interface, an object whose
-                __array__ method returns an array, or any (nested) sequence.
-            dtype : data-type, optional
-                The desired data-type for the array.  If not given, then the type will
-                be determined as the minimum type required to hold the objects in the
-                sequence.
-            copy : bool, optional
-                If true (default), then the object is copied.  Otherwise, a copy will
-                only be made if __array__ returns a copy, if obj is a nested sequence,
-                or if a copy is needed to satisfy any of the other requirements
-                (`dtype`, `order`, etc.).
-            order : {'K', 'A', 'C', 'F'}, optional
-                Specify the memory layout of the array. If object is not an array, the
-                newly created array will be in C order (row major) unless 'F' is
-                specified, in which case it will be in Fortran order (column major).
-                If object is an array the following holds.
-    
-                ===== ========= ===================================================
-                order  no copy                     copy=True
-                ===== ========= ===================================================
-                'K'   unchanged F & C order preserved, otherwise most similar order
-                'A'   unchanged F order if input is F and not C, otherwise C order
-                'C'   C order   C order
-                'F'   F order   F order
-                ===== ========= ===================================================
-    
-                When ``copy=False`` and a copy is made for other reasons, the result is
-                the same as if ``copy=True``, with some exceptions for `A`, see the
-                Notes section. The default order is 'K'.
-            subok : bool, optional
-                If True, then sub-classes will be passed-through, otherwise
-                the returned array will be forced to be a base-class array (default).
-            ndmin : int, optional
-                Specifies the minimum number of dimensions that the resulting
-                array should have.  Ones will be pre-pended to the shape as
-                needed to meet this requirement.
-    
+            self : self
+
+            T : int 
+                number of points
+            nchan : int 
+                number of channels
+            Q : int
+                number of clases
+            spont_options : dict
+                structure with option parameters for the spontaneus case
+            evoked_options : dict
+                structure with option parameters for the task related case
+           
+   
             Returns
             -------
-            out : ndarray
-                An array object satisfying the specified requirements.
+            out : class object
+                An object satisfying the specified requirements.
     
             See Also
             --------
