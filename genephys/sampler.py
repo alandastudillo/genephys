@@ -38,7 +38,7 @@ class DataSampler():
             nchan : int 
                 number of channels
             Q : int
-                number of clases
+                number of clases/ conditions
             spont_options : dict
                 structure with option parameters for the spontaneus case
             evoked_options : dict
